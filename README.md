@@ -55,7 +55,8 @@ Al iniciar la aplicación, hay un primer error evidente: los resultados (total r
 
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/2.png)
 
-> se corregio el error cuando se mostraba el ganador antes de finalizar la carrera, se puede avidenciar en la imagen que una vez los galgos finalize la carrera se imprime el ganador, donde sera el que llegue a la posición 1.   
+> se corregio el error cuando se mostraba el ganador antes de finalizar la carrera, se puede avidenciar en la imagen que una vez los galgos finalize la carrera se imprime el 
+> ganador, donde sera el que llegue a la posición 1.   
 
 
 Parte III
