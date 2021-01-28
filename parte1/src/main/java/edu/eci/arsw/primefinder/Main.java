@@ -1,14 +1,13 @@
 package edu.eci.arsw.primefinder;
 
+import java.util.ArrayList;
+
 public class Main {
 
-	public static void main(String[] args) {
-		
-		PrimeFinderThread pft=new PrimeFinderThread(0, 30000000);
-		
-		pft.start();
-		
-		
-	}
-	
+    public static void main(String[] args) throws InterruptedException {
+
+        PrimeFinder primeFinder = new PrimeFinder();
+        primeFinder.findPrimes();
+
+    }
 }
