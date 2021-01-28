@@ -18,7 +18,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.1.png)
 
-> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo > ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 12%.
+> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo  > ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 12%.
 
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
