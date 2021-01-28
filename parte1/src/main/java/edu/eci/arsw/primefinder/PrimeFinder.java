@@ -3,8 +3,16 @@ package edu.eci.arsw.primefinder;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Authors: Laura Alejandra Bernal Hernandez, Paula Andrea Guevara Sánchez, Daniel Felipe Rincón Muñoz
+ */
 public class PrimeFinder {
 
+    /**
+     * Encuentra los números primos hasta 30.000.000, utilizando 3 threads, los cuales se detienen después de un tiempo
+     * y se reanuda el programa presionando la tecla "Enter"
+     * @throws InterruptedException Cuándo el thread es interrumpido mientras duerme
+     */
     public void findPrimes() throws InterruptedException {
         int primesTo = 30000000;
         int threadNumber = 3;
