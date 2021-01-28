@@ -27,7 +27,7 @@ Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistr
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.2.png)
 
 
-Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 9%, en el cual se analiza que al tener varias hilos ejecutando usa menos núcleo en un tiempo de ejecución más rapido. 
+Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 9%, en el cual se analiza que al tener varias hilos ejecutando usa menos núcleo en un tiempo de ejecución más rapido con uso del 9%. 
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
