@@ -18,7 +18,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.1.png)
 
-> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo  > ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 12%.
+> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo  ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 12%.
 
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
@@ -27,7 +27,7 @@ Creación, puesta en marcha y coordinación de hilos.
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.2.png)
 
 
-> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en > ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 9%, en el cual se analiza que al tener varias hilos ejecutando usa menos núcleo en un tiempo de > > ejecución más rapido con uso del 9%. 
+> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en  ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 9%, en el cual se analiza que al tener varias hilos ejecutando usa menos núcleo en un tiempo de > ejecución más rapido con uso del 9%. 
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
@@ -56,7 +56,7 @@ Al iniciar la aplicación, hay un primer error evidente: los resultados (total r
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/2.png)
 
 > se corregio el error cuando se mostraba el ganador antes de finalizar la carrera, se puede avidenciar en la imagen que una vez los galgos finalize la carrera se imprime el 
-> ganador, donde sera el que llegue a la posición 1.   
+ganador, donde sera el que llegue a la posición 1.   
 
 
 Parte III
