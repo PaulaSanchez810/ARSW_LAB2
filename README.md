@@ -14,7 +14,20 @@ Creación, puesta en marcha y coordinación de hilos.
 
 1. Revise el programa “primos concurrentes” (en la carpeta parte1), dispuesto en el paquete edu.eci.arsw.primefinder. Este es un programa que calcula los números primos entre dos intervalos, distribuyendo la búsqueda de los mismos entre hilos independientes. Por ahora, tiene un único hilo de ejecución que busca los primos entre 0 y 30.000.000. Ejecútelo, abra el administrador de procesos del sistema operativo, y verifique cuantos núcleos son usados por el mismo.
 
+### 📂 Desarrollo de la práctica:
+
+![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.1.png)
+
+Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 12%.
+
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
+
+### 📂 Desarrollo de la práctica:
+
+![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.2.png)
+
+
+Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en ejecución, se puede ver el rendimiento de núcleos graficamente con un uso del 9%, en el cual se analiza que al tener varias hilos ejecutando usa menos núcleo en un tiempo de ejecución más rapido. 
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
@@ -37,6 +50,12 @@ RegistroLLegada. Cuando un galgo llega a la meta, accede al contador ubicado en 
 logre tomar el ‘1’ será el ganador.
 
 Al iniciar la aplicación, hay un primer error evidente: los resultados (total recorrido y número del galgo ganador) son mostrados antes de que finalice la carrera como tal. Sin embargo, es posible que una vez corregido esto, haya más inconsistencias causadas por la presencia de condiciones de carrera.
+
+### 📂 Desarrollo de la práctica:
+
+![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/2.png)
+
+
 
 Parte III
 
