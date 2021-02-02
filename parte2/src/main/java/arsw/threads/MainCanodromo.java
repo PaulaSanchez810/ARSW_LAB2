@@ -10,12 +10,16 @@ public class MainCanodromo {
 
     private static Canodromo can;
 
+    private static Semaforo semaforo;
+
     private static RegistroLlegada reg = new RegistroLlegada();
+
 
     public static void main(String[] args) {
         can = new Canodromo(17, 100);
         galgos = new Galgo[can.getNumCarriles()];
         can.setVisible(true);
+        semaforo = new Semaforo();
 
         //Acción del botón start
         can.setStartAction(
@@ -32,7 +36,7 @@ public class MainCanodromo {
                             public void run() {
                                 for (int i = 0; i < can.getNumCarriles(); i++) {
                                     //crea los hilos 'galgos'
-                                    galgos[i] = new Galgo(can.getCarril(i), "" + i, reg);
+                                    galgos[i] = new Galgo(can.getCarril(i), "" + i, reg, semaforo);
                                     //inicia los hilos
                                     galgos[i].start();
                                 }
@@ -47,7 +51,6 @@ public class MainCanodromo {
                                 System.out.println("El ganador fue:" + reg.getGanador());
                             }
                         }.start();
-
                     }
                 }
         );
@@ -56,15 +59,7 @@ public class MainCanodromo {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        for (Galgo galgo : galgos) {
-                            synchronized (galgo) {
-                                try {
-                                    galgo.wait();
-                                } catch (InterruptedException interruptedException) {
-                                    interruptedException.printStackTrace();
-                                }
-                            }
-                        }
+                        semaforo.pauseRace();
                         System.out.println("Carrera pausada!");
                     }
                 }
@@ -74,7 +69,7 @@ public class MainCanodromo {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
+                        semaforo.continueRace();
                         System.out.println("Carrera reanudada!");
                     }
                 }
