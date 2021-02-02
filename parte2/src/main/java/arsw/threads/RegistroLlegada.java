@@ -2,7 +2,7 @@ package arsw.threads;
 
 public class RegistroLlegada {
 
-	private int ultimaPosicionAlcanzada=1;
+	private int ultimaPosicionAlcanzada = 1;
 
 	private String ganador=null;
 	
@@ -19,9 +19,7 @@ public class RegistroLlegada {
 	}
 
 	public void setUltimaPosicionAlcanzada(int ultimaPosicionAlcanzada) {
-		this.ultimaPosicionAlcanzada = ultimaPosicionAlcanzada;
+			this.ultimaPosicionAlcanzada = ultimaPosicionAlcanzada;
 	}
 
-	
-	
 }
