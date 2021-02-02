@@ -56,6 +56,15 @@ public class MainCanodromo {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        for (Galgo galgo : galgos) {
+                            synchronized (galgo) {
+                                try {
+                                    galgo.wait();
+                                } catch (InterruptedException interruptedException) {
+                                    interruptedException.printStackTrace();
+                                }
+                            }
+                        }
                         System.out.println("Carrera pausada!");
                     }
                 }
@@ -65,6 +74,7 @@ public class MainCanodromo {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+
                         System.out.println("Carrera reanudada!");
                     }
                 }
