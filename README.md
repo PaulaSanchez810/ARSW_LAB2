@@ -18,7 +18,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.1.png)
 
-> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número único de hilo  ejecución, se puede analizar que un porcentaje de uso del procesador es aproximadamente de 46%.
+> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas, el rendimiento de la CPU del computador, al correr con un solo hilo  ejecución, se puede evidenciar que un porcentaje de uso del procesador es aproximadamente 12%, y presenta picos en de rendimiento entre el 50% - 90% de uso.
 
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
@@ -27,7 +27,7 @@ Creación, puesta en marcha y coordinación de hilos.
 ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/1.2.png)
 
 
-> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener un número tres hilos en  ejecución, en el cual se analiza que al tener varias hilos ejecutando usa más núcleo en un menor tiempo, utilizando un porcentaje de uso del procesador es aproximadamente de 66%.
+> Como se puede evidenciar en la imagen al ejecutar el programa y abrir el admistrador de tareas y ver el rendimiento de la CPU del computador, al tener tres hilos en  ejecución, este evidencia un uso del procesador de aproximadamente 9%, y presenta picos de redimiento entre 45% - 95% de uso.
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
@@ -53,35 +53,36 @@ Al iniciar la aplicación, hay un primer error evidente: los resultados (total r
 
 ### 📂 Desarrollo de la práctica:
 
-![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/2.png)
-
-> se corregio el error cuando se mostraba el ganador antes de finalizar la carrera, se puede evidenciar en la imagen que una vez los galgos finalicen la carrera se imprime el 
-ganador, donde sera el que llegue a la posición 1.   
-
-
 Parte III
 
-1.  Corrija la aplicación para que el aviso de resultados se muestre
-    sólo cuando la ejecución de todos los hilos ‘galgo’ haya finalizado.
-    Para esto tenga en cuenta:
+1.  Corrija la aplicación para que el aviso de resultados se muestre sólo cuando la ejecución de todos los hilos ‘galgo’ haya finalizado. Para esto tenga en cuenta:
 
     a.  La acción de iniciar la carrera y mostrar los resultados se realiza a partir de la línea 38 de MainCanodromo.
 
     b.  Puede utilizarse el método join() de la clase Thread para sincronizar el hilo que inicia la carrera, con la finalización de los hilos de los galgos.
+    
+    ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/2.png)
 
-2.  Una vez corregido el problema inicial, corra la aplicación varias
-    veces, e identifique las inconsistencias en los resultados de las
-    mismas viendo el ‘ranking’ mostrado en consola (algunas veces
-    podrían salir resultados válidos, pero en otros se pueden presentar
-    dichas inconsistencias). A partir de esto, identifique las regiones
-    críticas () del programa.
+    > se corrigió el error cuando se mostraba el ganador antes de finalizar la carrera, se puede evidenciar en la imagen que una vez los galgos finalicen la carrera se imprime         el ganador por consola, donde sera el que llegue a la posición 1 (Ganador), pero al momento de ejecutar se evidencia errores e la detección del ganador, como se observa en       la imagen este puede dar erroneamente su resultado otorgando la misma posición a mas de un galgo.  
 
-3.  Utilice un mecanismo de sincronización para garantizar que a dichas
-    regiones críticas sólo acceda un hilo a la vez. Verifique los
-    resultados.
+2.  Una vez corregido el problema inicial, corra la aplicación varias veces, e identifique las inconsistencias en los resultados de las mismas viendo el ‘ranking’ mostrado en       consola (algunas veces podrían salir resultados válidos, pero en otros se pueden presentar dichas inconsistencias). A partir de esto, identifique las regiones críticas ()       del programa.
+    
+    > Se identifico como Región crítica en la clase Galgo.java en el método corra() que no exisitia una sincronización de los hilos de cada uno de los galgos, como consecuencia,       algunas variables consultando datos del Ranking sin estos ser actualizados, provocando duplicidad en su resultado.
 
-4.  Implemente las funcionalidades de pausa y continuar. Con estas,
-    cuando se haga clic en ‘Stop’, todos los hilos de los galgos
-    deberían dormirse, y cuando se haga clic en ‘Continue’ los mismos
-    deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
+3.  Utilice un mecanismo de sincronización para garantizar que a dichas regiones críticas sólo acceda un hilo a la vez. Verifique los resultados.
+
+     ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/RC.jpg)
+      
+      > Se realizo la correción de la sección crítica, asiendo uso de la método synchronized(), lo cual permite que hilo por hilo realice la validación y obtención de datos,          de la lista de llegada de los galgos.
+
+4.  Implemente las funcionalidades de pausa y continuar. Con estas, cuando se haga clic en ‘Stop’, todos los hilos de los galgos deberían dormirse, y cuando se haga clic en         ‘Continue’ los mismos deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las              primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
+    
+    > Se implmento una clase auxiliar llamada semaforo que nos permitio determinar en que momento se habian inciado todo los hilos, esta bandera permite pausar logica y               visualmente cada uno de los threads de los galgos.
+    
+    ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/continue.PNG)
+    > El método checkPause() modifica el valor de la bandera y pone en espera a los thread.
+    
+    ![](https://github.com/PaulaSanchez810/ARSW_LAB2/blob/master/img/continue.PNG)
+    > El método continueRace() modifica el valor de la bandera y acciona thread por thread.
+
 
