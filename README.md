@@ -67,7 +67,7 @@ Parte III
 
 2.  Una vez corregido el problema inicial, corra la aplicación varias veces, e identifique las inconsistencias en los resultados de las mismas viendo el ‘ranking’ mostrado en       consola (algunas veces podrían salir resultados válidos, pero en otros se pueden presentar dichas inconsistencias). A partir de esto, identifique las regiones críticas ()       del programa.
     
-    > Se identifico como Región crítica en la clase Galgo.java en el método corra() que no exisitia una sincronización de los hilos de cada uno de los galgos, como consecuencia,       algunas variables consultando datos del Ranking sin estos ser actualizados, provocando duplicidad en su resultado.
+    > Se identifico como Región crítica en la clase Galgo.java en el método corra() que no exisitia una sincronización de los hilos de cada uno de los galgos, como consecuencia,       algunas variables consultan datos del Ranking sin estos ser actualizados, provocando duplicidad en su resultado.
 
 3.  Utilice un mecanismo de sincronización para garantizar que a dichas regiones críticas sólo acceda un hilo a la vez. Verifique los resultados.
 
